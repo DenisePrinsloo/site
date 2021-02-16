@@ -1,0 +1,317 @@
+*{
+    margin:0; /*obrigatorio*/
+    padding:0; /*obrigatorio*/
+    box-sizing:border-box; /*obrigatorio*/
+}
+body{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif; /*colocando a fonte que foi pega no google*/
+    font-size: 13px;
+    overflow-x: hidden; /*todo conteudo que ultrapassar a horizontal ele vai ser ignorado*/
+}
+.botao{
+    display: inline-block; /*permiti alterar tamanho e formato*/
+    background-color:#b28756;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    text-decoration: none; /*tirar a linha debaixo do link*/
+    padding: 10px 30px;
+    font-weight: 600; /*negrito*/
+    margin-top: 30px; /*afasta o botão de cima para baixo*/
+    border-radius: 20px; /*arredonda a borda*/
+}
+header{
+    height: 100px; /*altura do cabeçalho*/
+    background-color: #000000; /*cor de fundo do cabeçalho*/
+    color: #fff;
+}
+.cabecalho{
+    max-width: 1140px; /*largura maxima,fixa*/
+    height: 100px;
+    margin: auto; /*vai levar a tag criada .header para o meio*/
+    display: flex; /*porque o conteudo dentro do header vai ser flex*/
+    align-items: center; /*o logo e o conteudo do menu vai ficar no centro/ no meio*/
+}
+.logo{
+    width: 100px; /*area logo tamanho fixo largura*/
+    
+
+}
+.logoimg{
+    width: 80px; /*largura do logo*/
+    height: 80px;/*altura do logo*/
+    background-color: #b28756;
+    border-radius: 40px; /*arredondando a bordo do logo*/
+}
+.menu{
+    flex: 1; /*aqui ele vai pegar todo o tamanho do espaço*/
+    display: flex;
+    justify-content: flex-end; /*o conteudo do menu vai centralizar horizontalmente na direita */
+}
+.menu ul,
+.menu li{
+    list-style: none; /*tirar os pontinhos do menu*/
+}
+.menu ul{
+    display: flex; /*o menu vai ficar um ao lado do outro*/
+}
+.menu li a {
+    color: #fff; /*cor do link do menu*/
+    text-transform: uppercase; /*deixar o link do menu maiusculas*/
+    font-weight: 600; /* fonte do link do menu*/
+    text-decoration: none; /*tirar a linha do link do menu*/
+    display: flex; /*foi usado pq foi prociso aumemtar a altura do link do menu por causa do borda que foi colocada em baixo no link do menu*/
+    align-items: center; /*em conjunto com o display flex, esse aqui vai fazer com que o menu centralize*/
+    padding-left: 10px; /*os links do menus estavao todos colados, com isso descola e afasta*/
+    padding-right: 10px; /*esse aqui reforça o deslocamento e deixa mais bonito visualmente use em conjunto*/
+    height: 100px; /*esse aqui complementa o display block*/
+    border-bottom: 5px solid #000; /*sem esse aqui ao passar o mouse em cima do menu, ele iria um pouquinho para cima, que tambem da um efeito legal, mas com isso aqui ele nao vai saltar então ele fica fixo*/
+}
+.menu li a:hover{
+    border-bottom: 5px solid #b28765; /* aqui é aquela animação de passar o mouser por cima*/
+    color: #ccc; /* a cor do texto do link do menu vai mudar quando passar o mouse por cima*/
+}
+.menu .menu_ativo a {
+    border-bottom: 5px solid #b28765; /*aqui vai deixar o menu ativo, com aquela barrinha sempre em baixo no menu com nome Principal*/
+}
+
+
+/*criação do banner principal e seu conteudo*/
+
+.banner{
+    height:calc(100vh - 100px); /*tamanho total do monitor*/
+    background-image:url('../imagens/bg.jpg');
+    background-size: cover; /*ajusta o tamanho da imagem de forma que preenche todo o espaço*/
+    background-position: bottom; /*prioriza a parte de baixo da imagem*/
+    overflow: hidden; /*tudo que passar o tamanho do conteudo vai ser oculto*/
+}
+.banner .sliders{
+    width:1000vw; /*tamanho total da tela não esta sendo aplicado*/
+    height:100%;
+    
+
+}
+.banner .slide{
+    width:100vw; /*tamanho total da tela*/
+    height:100%;
+    display:inline-block; /*slide ficara um ao lado do outro*/
+    background-color:rgba(0, 0, 0, 0.8); /*vai deixar a imagem mais escura*/
+}
+
+.banner .slidearea{ /*conteudo vai ficar centralizado*/
+    display:flex;
+    flex-direction: column; /*deixar um debaixo do outro*/
+    height: 100%;
+    align-items: center;
+    color: #fff;
+    justify-content: center; /*deixar centralizado horizontalmente*/
+
+}
+.banner h1{
+    text-transform: uppercase; /*letra maiuscula*/
+    font-weight: bold; /*negrito*/
+    font-size: 50px;
+}
+.banner h1 span{
+    color: #b28756;
+}
+.banner h2{
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+
+.banner .sliders-pointers{
+    width: 100%; /*pega a area inteira*/
+    height: 20px;
+    position: absolute;
+    margin-top: -50px; /*area dos ... vai ficar dentro do slide*/
+    display:flex; /*centralizar conteudo no centro, alinhamento*/
+    justify-content: center; /*centralizar conteudo no centro, alinhamento*/
+    align-items: center; /*centralizar conteudo no centro, alinhamento*/
+
+}
+
+.banner .pointer{  /*bolinhas que fica debiaxo do bainner*/
+    width: 15px;
+    height: 15px;
+    border: 2px solid #b28756;
+    border-radius: 8px; /*arredonda as bordas*/
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer; /*efeito de clique*/
+}
+
+.banner .pointer.active{
+    background-color: #b28756;
+}
+
+
+.default{ /*segunda parte do site*/
+    
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.default .section-title,
+.default .section-desc{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600; /*negrito*/
+}
+
+.default .section-title{
+    font-size: 20px;
+    
+
+}
+
+.default .section-desc{
+    font-size: 12px;
+    color: #ccc;
+    margin-top: 10px;
+    margin-bottom: 40px; /*espaçamento para baixo*/
+
+}
+
+.default .section-body{
+    max-width:1140px;
+    margin: auto; /*vai para o meio*/
+    
+
+}
+.default.light{
+    background-color: #f7f7f7;
+}
+.default.light .section-title,
+.default.light .section-body{
+    color: #000;
+}
+
+
+
+.default.dark{
+    background-color: #000;
+}
+.default.dark  .section-title,
+.default.dark .section-body{
+    color: #fff
+    ;
+}
+
+
+
+
+
+/*CSS DE AREAS ESPECIFICAS*/
+
+
+.section-aboutus{
+    display: flex;
+}
+.section-aboutus--left{
+    flex: 1;
+}
+.section-aboutus--right{
+    width: 520px;
+    text-align: center; /*centralizar a imagem*/
+    
+}
+.section-aboutus--left p{
+    font-size: 14px;
+    line-height: 25px; /*da um espaçamento entre as letras*/
+}
+.section-aboutus--right img{
+    width: 400px; /*para diminuir a imagem*/
+    box-shadow: 0px 5px 10px #333;  /*sombra na imagem*/
+}
+
+.section-services{
+    display: flex;  
+}
+.service{
+    flex: 1;
+    text-align: center;
+    border-right: 1px solid #333; /*foi aplicada bordinhas apenas no lado direito*/
+    padding: 15px;
+}
+.service:first-child{
+    border-left: 1px solid #333; /*foi aplicado um bordinha na primeira apenas do lado esquerdo*/
+}
+.service h4{
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-size: 18px;
+
+}
+.service p {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #999;
+}
+
+
+
+
+
+
+/*Seção de projetos */
+
+.section-projects{
+    display: flex; /*para o conteudo ficar no meio*/
+    flex-direction: column; /*para o conteudo ficar no meio*/
+    align-items: center; /*para o conteudo ficar no meio*/
+
+
+}
+.section-projects--filters{
+    border: 1px solid #ccc;
+    background-color: #999;
+    border-radius: 30px;
+    display: inline-block; /*pega a area especifica dele mesmo*/
+    padding: 0px 20px;
+}
+.section-projects--filters ul,
+.section-projects--filters li{
+    list-style: none;
+}
+.section-projects--filters li{
+    display: inline-block; /*item vai ficar ao lado do outro*/
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 13px;
+    border-left:1px solid #ccc; /*bordinhas*/
+    color: #555;
+    border-bottom: 3px solid #eee;
+    cursor: pointer;
+}
+.section-projects--filters li:hover,
+.section-projects--filters li.active {
+    border-bottom: 3px solid #b28756;
+}
+.section-projects--filters li:first-child{
+    border-left: 0; /*tira a borda da esquerda*/
+}
+
+.section-projects--photos{
+    width:100%;
+    max-width:1140px;
+    margin-top: 20px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+.section-projects--photo{
+    width:280px;
+}
+
+.photoarea{
+    margin:20px;
+    width:260px;
+    height:160px;
+}
+.section-projects--photo img{
+    width:inherit;
+    height:inherit;
+    object-fit: cover;
+}
+
